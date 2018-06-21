@@ -19,7 +19,7 @@ describe Bank_Account do
 
     it "adds the deposit as a transaction" do
       subject.deposit(10, "12/12/2012")
-      expect(subject.transactions).to eq(["12/12/2012", 10])
+      expect(subject.transactions).to eq([["12/12/2012", 10]])
     end
 
   end
@@ -29,6 +29,11 @@ describe Bank_Account do
     it "subtracts money from the bank account" do
       subject.withdraw(10, "12/12/2012")
       expect(subject.balance).to eq(-10)
+    end
+
+    it "adds the withdrawal as a transaction" do
+      subject.withdraw(10, "12/12/2012")
+      expect(subject.transactions).to eq([["12/12/2012", -10]])
     end
 
   end

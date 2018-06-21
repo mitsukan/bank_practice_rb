@@ -9,6 +9,7 @@ class Bank_Account
 
   def deposit(amount, date)
     @balance += amount
+    @transactions.push([date, amount])
   end
 
   def withdraw(amount, date)
